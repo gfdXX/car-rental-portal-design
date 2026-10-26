@@ -1,0 +1,190 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="cbcd5f68-61fd-44be-8216-8d45cc0db560" name="Диаграмма классов">
+    <mxGraphModel dx="2811" dy="3077" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1860" pageHeight="1420" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontFamily=Arial;" value="Диаграмма классов портала бронирования автомобилей" vertex="1">
+          <mxGeometry height="45" width="480" x="1610" y="-450" as="geometry" />
+        </mxCell>
+        <mxCell id="UserEntity" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;UserEntity&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- user_uuid: string&lt;br&gt;- last_name: string&lt;br&gt;- first_name: string&lt;br&gt;- middle_name: string&lt;br&gt;- birth_date: date&lt;br&gt;- phone: string&lt;br&gt;- email: string&lt;br&gt;- password_hash: string&lt;br&gt;- role: UserRole&lt;br&gt;- status: UserStatus&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="250" width="330" x="2610" y="-570" as="geometry" />
+        </mxCell>
+        <mxCell id="CarEntity" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;CarEntity&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- car_uuid: string&lt;br&gt;- brand: string&lt;br&gt;- model: string&lt;br&gt;- car_class: string&lt;br&gt;- body_type: BodyType&lt;br&gt;- power: integer&lt;br&gt;- fuel_type: FuelType&lt;br&gt;- transmission: string&lt;br&gt;- seats: integer&lt;br&gt;- price: integer&lt;br&gt;- availability: boolean&lt;br&gt;- partner_uuid: string&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="290" width="330" x="2610" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="bFU4BqXiexDLmbCDRyCF-1" edge="1" parent="1" source="PartnerEntity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="CarEntity">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2060" y="580" />
+              <mxPoint x="2060" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PartnerEntity" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;PartnerEntity&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- partner_uuid: string&lt;br&gt;- company_name: string&lt;br&gt;- address: string&lt;br&gt;- phone: string&lt;br&gt;- email: string&lt;br&gt;- website_url: string&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="180" width="330" x="1550" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="RentalEntity" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;RentalEntity&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- rental_uuid: string&lt;br&gt;- user_uuid: string&lt;br&gt;- car_uuid: string&lt;br&gt;- partner_uuid: string&lt;br&gt;- status: RentalStatus&lt;br&gt;- date_from: timestamp&lt;br&gt;- date_to: timestamp&lt;br&gt;- created_at: timestamp&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="220" width="330" x="1550" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchHistoryDTO" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;SearchHistoryDTO&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- user_uuid: string&lt;br&gt;- district: string&lt;br&gt;- car_class: string&lt;br&gt;- date_from: date&lt;br&gt;- date_to: date&lt;br&gt;- min_price: integer&lt;br&gt;- max_price: integer&lt;br&gt;- created_at: timestamp&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="220" width="330" x="2090" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="UserDTO" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;UserDTO&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- user_uuid: string&lt;br&gt;- full_name: string&lt;br&gt;- phone: string&lt;br&gt;- email: string&lt;br&gt;- role: string&lt;br&gt;- status: string&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="180" width="330" x="2220" y="-537.5" as="geometry" />
+        </mxCell>
+        <mxCell id="CarDTO" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;CarDTO&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- car_uuid: string&lt;br&gt;- brand: string&lt;br&gt;- model: string&lt;br&gt;- car_class: string&lt;br&gt;- body_type: string&lt;br&gt;- fuel_type: string&lt;br&gt;- transmission: string&lt;br&gt;- seats: integer&lt;br&gt;- price: integer&lt;br&gt;- availability: boolean&lt;br&gt;- partner: PartnerDTO&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="255" width="330" x="2610" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="PartnerDTO" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;PartnerDTO&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- partner_uuid: string&lt;br&gt;- company_name: string&lt;br&gt;- address: string&lt;br&gt;- phone: string&lt;br&gt;- email: string&lt;br&gt;- website_url: string&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="180" width="330" x="1550" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="RentalDTO" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;RentalDTO&lt;/b&gt;&lt;hr&gt;- id: int&lt;br&gt;- rental_uuid: string&lt;br&gt;- user_uuid: string&lt;br&gt;- car_uuid: string&lt;br&gt;- partner_uuid: string&lt;br&gt;- status: string&lt;br&gt;- date_from: timestamp&lt;br&gt;- date_to: timestamp&lt;br&gt;- partner_url: string&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="220" width="330" x="1140" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="PartnerRedirectDTO" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;PartnerRedirectDTO&lt;/b&gt;&lt;hr&gt;- partner_uuid: string&lt;br&gt;- rental_uuid: string&lt;br&gt;- website_url: string&lt;br&gt;- message: string&lt;hr&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="140" width="330" x="1140" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="UserRepository" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;UserRepository&lt;/b&gt;&lt;hr&gt;&amp;nbsp;&lt;hr&gt;+ createUser(UserEntity): UserEntity&lt;br&gt;+ getUserByEmail(string): UserEntity&lt;br&gt;+ getUserById(int): UserEntity&lt;br&gt;+ updateUserStatus(int, string): void" vertex="1">
+          <mxGeometry height="165" width="430" x="2560" y="-287.5" as="geometry" />
+        </mxCell>
+        <mxCell id="CarRepository" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;CarRepository&lt;/b&gt;&lt;hr&gt;&amp;nbsp;&lt;hr&gt;+ getCars(SearchFilterDTO): CarEntity[]&lt;br&gt;+ getCarById(int): CarEntity&lt;br&gt;+ getPartners(): PartnerEntity[]&lt;br&gt;+ getPartnerById(int): PartnerEntity&lt;br&gt;+ updateCar(CarEntity): void" vertex="1">
+          <mxGeometry height="190" width="430" x="2560" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="RentalRepository" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;RentalRepository&lt;/b&gt;&lt;hr&gt;&amp;nbsp;&lt;hr&gt;+ getRentalsByUser(string): RentalEntity[]&lt;br&gt;+ getRentalById(int): RentalEntity&lt;br&gt;+ createRental(RentalEntity): RentalEntity&lt;br&gt;+ updateRentalStatus(string, string): void" vertex="1">
+          <mxGeometry height="165" width="430" x="1550" y="-250" as="geometry" />
+        </mxCell>
+        <mxCell id="StatisticsRepository" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;StatisticsRepository&lt;/b&gt;&lt;hr&gt;&amp;nbsp;&lt;hr&gt;+ saveSearchEvent(SearchHistoryDTO): void&lt;br&gt;+ saveRedirectEvent(RentalDTO): void&lt;br&gt;+ getPartnerStats(): ReportDTO&lt;br&gt;+ getSystemLogs(): LogDTO[]" vertex="1">
+          <mxGeometry height="165" width="430" x="2040" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="AuthService" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;AuthService&lt;/b&gt;&lt;hr&gt;- userRepository: UserRepository&lt;hr&gt;+ register(UserDTO): UserDTO&lt;br&gt;+ login(string, string): TokenDTO&lt;br&gt;+ validateToken(string): boolean&lt;br&gt;+ getUserRole(string): UserRole" vertex="1">
+          <mxGeometry height="190" width="430" x="2040" y="-300" as="geometry" />
+        </mxCell>
+        <mxCell id="CarService" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;CarService&lt;/b&gt;&lt;hr&gt;- carRepository: CarRepository&lt;br&gt;- statisticsRepository: StatisticsRepository&lt;hr&gt;+ searchCars(SearchFilterDTO): CarDTO[]&lt;br&gt;+ getCarById(int): CarDTO&lt;br&gt;+ getPartners(): PartnerDTO[]&lt;br&gt;+ checkPartnerAvailability(int, date, date): boolean" vertex="1">
+          <mxGeometry height="215" width="430" x="2560" y="-37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="RentalService" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;RentalService&lt;/b&gt;&lt;hr&gt;- rentalRepository: RentalRepository&lt;hr&gt;+ createPartnerRedirect(string, int): PartnerRedirectDTO&lt;br&gt;+ cancelRedirect(string): RentalDTO&lt;br&gt;+ getUserRentals(string): RentalDTO[]&lt;br&gt;+ processRentalEvent(RentalDTO): void" vertex="1">
+          <mxGeometry height="205" width="430" x="1550" y="-32.5" as="geometry" />
+        </mxCell>
+        <mxCell id="AdminService" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;AdminService&lt;/b&gt;&lt;hr&gt;- userRepository: UserRepository&lt;br&gt;- carRepository: CarRepository&lt;br&gt;- statisticsRepository: StatisticsRepository&lt;hr&gt;+ updateUser(UserDTO): void&lt;br&gt;+ updateCar(CarDTO): void&lt;br&gt;+ updatePartner(PartnerDTO): void&lt;br&gt;+ getStatistics(): ReportDTO" vertex="1">
+          <mxGeometry height="215" width="430" x="2040" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="PortalController" parent="1" style="html=1;whiteSpace=wrap;overflow=fill;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;" value="&lt;b&gt;PortalController&lt;/b&gt;&lt;hr&gt;- authService: AuthService&lt;br&gt;- carService: CarService&lt;br&gt;- rentalService: RentalService&lt;br&gt;- adminService: AdminService&lt;hr&gt;+ postRegister(UserDTO): ResponseEntity&lt;br&gt;+ postLogin(LoginDTO): ResponseEntity&lt;br&gt;+ getCars(SearchFilterDTO): ResponseEntity&lt;br&gt;+ getCarById(int): ResponseEntity&lt;br&gt;+ postRedirect(string, int): ResponseEntity&lt;br&gt;+ cancelRental(string): ResponseEntity" vertex="1">
+          <mxGeometry height="260" width="430" x="2040" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_2" edge="1" parent="1" source="UserEntity" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;edgeStyle=orthogonalEdgeStyle;fontSize=16;" target="RentalEntity" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1500" y="-330" />
+              <mxPoint x="1500" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_3" edge="1" parent="1" source="CarEntity" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;edgeStyle=orthogonalEdgeStyle;jumpStyle=sharp;fontSize=16;" target="RentalEntity" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1970" y="550" />
+              <mxPoint x="1970" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_4" edge="1" parent="1" source="PartnerEntity" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;fontSize=16;" target="RentalEntity" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_5" edge="1" parent="1" source="UserEntity" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;startSize=16;fontSize=16;" target="UserDTO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_6" edge="1" parent="1" source="CarEntity" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;startSize=16;fontSize=16;" target="CarDTO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_7" edge="1" parent="1" source="PartnerEntity" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;fontSize=16;" target="PartnerDTO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_8" edge="1" parent="1" source="RentalEntity" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;fontSize=16;" target="RentalDTO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_9" edge="1" parent="1" source="RentalDTO" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;fontSize=16;" target="PartnerRedirectDTO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_10" edge="1" parent="1" source="UserRepository" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;startSize=16;fontSize=16;" target="UserEntity" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_11" edge="1" parent="1" source="CarRepository" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;startSize=16;fontSize=16;" target="CarEntity" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_12" edge="1" parent="1" source="CarRepository" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;jumpStyle=sharp;jumpSize=12;fontSize=16;" target="PartnerEntity" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2530" y="380" />
+              <mxPoint x="2530" y="520" />
+              <mxPoint x="1840" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_13" edge="1" parent="1" source="RentalRepository" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;fontSize=16;" target="RentalEntity" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1765" y="-280" />
+              <mxPoint x="1520" y="-280" />
+              <mxPoint x="1520" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_14" edge="1" parent="1" source="StatisticsRepository" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;fontSize=16;" target="SearchHistoryDTO" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_15" edge="1" parent="1" source="AuthService" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;startSize=16;fontSize=16;" target="UserRepository" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_16" edge="1" parent="1" source="CarService" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;startSize=16;fontSize=16;" target="CarRepository" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_17" edge="1" parent="1" source="CarService" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;startArrow=none;startFill=0;jumpStyle=sharp;jumpSize=18;startSize=16;fontSize=16;" target="StatisticsRepository" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2500" y="140" />
+              <mxPoint x="2500" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_18" edge="1" parent="1" source="RentalService" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;startSize=16;fontSize=16;" target="RentalRepository" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_19" edge="1" parent="1" source="RentalService" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;jumpStyle=sharp;jumpSize=12;fontSize=16;" target="StatisticsRepository" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2000" y="110" />
+              <mxPoint x="2000" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_20" edge="1" parent="1" source="AdminService" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;edgeStyle=orthogonalEdgeStyle;jumpStyle=sharp;jumpSize=12;fontSize=16;" target="UserRepository" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2530" y="270" />
+              <mxPoint x="2530" y="-250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_21" edge="1" parent="1" source="AdminService" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;jumpStyle=sharp;jumpSize=12;startSize=16;fontSize=16;" target="CarRepository" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_22" edge="1" parent="1" source="AdminService" style="endArrow=open;html=1;rounded=0;strokeColor=#000000;dashed=1;dashPattern=6 6;endFill=0;strokeWidth=1.5;jumpStyle=sharp;jumpSize=12;fontSize=16;" target="StatisticsRepository" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_23" edge="1" parent="1" source="PortalController" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;endFill=0;startSize=16;fontSize=16;" target="AuthService" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_24" edge="1" parent="1" source="PortalController" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;jumpStyle=sharp;jumpSize=12;startSize=16;fontSize=16;" target="CarService" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_25" edge="1" parent="1" source="PortalController" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;startSize=16;fontSize=16;" target="RentalService" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_26" edge="1" parent="1" source="PortalController" style="startArrow=diamondThin;startFill=1;endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.5;endFill=0;startSize=16;fontSize=16;" target="AdminService" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
